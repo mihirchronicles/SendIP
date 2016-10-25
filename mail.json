@@ -1,0 +1,17 @@
+{
+	"language": {
+		"en":
+		{
+			"subject":"Current IP", "message":"Your public IP is: "
+		}
+	},
+	"login": 
+	{
+		"user": "example@mail.com",
+		"password": "test123"
+	},
+	"sender": "sender@mail.com",
+	"receiver": "reciever@mail.com",
+	"smtp": "smtp.gmail.com",
+	"smtport": "587"
+}
