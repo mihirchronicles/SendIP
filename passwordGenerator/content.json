@@ -1,0 +1,10 @@
+{
+    "en":
+    	
+    	{
+	    	"label":"Enter password to encode:",
+			"codeBtn":"Encode",
+			"cleanBtn":"Clean",
+			"cpclipboardBtn":"Copy to clipboard"
+		}
+}
