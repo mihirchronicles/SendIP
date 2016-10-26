@@ -7,7 +7,7 @@
     },
     "login": {
         "user": "test@mail.com",
-        "password": "123#3889"
+        "password": "123"
     },
     "sender": "test@mail.com",
     "receiver": "test@mail.com",
