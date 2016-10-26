@@ -14,11 +14,11 @@ def mail_ip(language):
     # data
     user = data['login']['user']
     pwd = data['login']['password']
-    pwd = base64.b46decode(pwd) # decode password
+    pwd = base64.b64decode(pwd) # decode password
     sender = data['sender']
     receiver = data['receiver']
-    server = data['smpt']
-    port = data['smptport']
+    server = data['smtp']
+    port = data['smtport']
 
     # get public IP
     server = server + ':' + port # Concatenate server and port
@@ -32,13 +32,13 @@ def mail_ip(language):
     mime_message['Subject'] = data['language'][language]['subject']
 
     #send mail
-    server = smptlib.SMTP(server)
+    server = smtplib.SMTP(server)
     server.starttls()
     server.login(user, pwd)
     server.sendmail(sender, receiver.split(','), mime_message.as_string())
     server.quit()    
 
-def extract_ip():
+def extract_public_ip():
 	# Extract public IP with external web server
 	sock = urllib2.urlopen('http://checkip.dyndns.com/')
 	public_ip = sock.read()
