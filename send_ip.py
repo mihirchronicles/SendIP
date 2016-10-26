@@ -4,11 +4,11 @@
 # Send Public API using any email
 # Anything other than gmail, change mail.json configuration
 
-import json, smptlib, urllib2, base64
-from emial.meme.text import MIMEext
+import json, smtplib, urllib2, base64
+from email.mime.text import MIMEText
 
 def mail_ip(language):
-    with open(mail.json) as json_file:
+    with open('mail.json') as json_file:
         data = json.load(json_file)
 
     # data
@@ -21,7 +21,7 @@ def mail_ip(language):
     port = data['smptport']
 
     # get public IP
-    server = server + ':' port # Concatenate server and port
+    server = server + ':' + port # Concatenate server and port
     ip = extract_public_ip() 
     msg = data['language'][language]['message'] + ip
 
@@ -36,7 +36,7 @@ def mail_ip(language):
     server.starttls()
     server.login(user, pwd)
     server.sendmail(sender, receiver.split(','), mime_message.as_string())
-	server.quit()    
+    server.quit()    
 
 def extract_ip():
 	# Extract public IP with external web server
